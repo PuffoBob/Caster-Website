@@ -1,0 +1,676 @@
+
+    /* ----------------------- Global Styles ----------------------- */
+    body {
+      background: linear-gradient(135deg, #3a2b3f 0%, #1f181e 100%);
+      font-family: font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #FFFFFF;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5 {
+	  font-family: 'Inter', sans-serif;
+	  font-weight: 600;
+	}
+
+	.lead {
+	  font-weight: 400;
+	}
+
+    section { padding: 120px 0; }
+
+	:target {
+	transition: background-color 0.3s ease;
+}
+
+
+    /* ----------------------- Loader ----------------------- */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+       background: linear-gradient(135deg, #1f181e 0%, #3a2b3f 100%);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* From Uiverse.io by aaronross1 */
+    .typing-indicator {
+      width: 60px;
+      height: 30px;
+      position: relative;
+      z-index: 4;
+    }
+    .typing-circle {
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #000;
+      left: 15%;
+      transform-origin: 50%;
+      animation: typing-circle7124 0.5s alternate infinite ease;
+    }
+    @keyframes typing-circle7124 {
+      0% {
+        top: 20px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+      }
+      40% {
+        height: 8px;
+        border-radius: 50%;
+        transform: scaleX(1);
+      }
+      100% {
+        top: 0%;
+      }
+    }
+    .typing-circle:nth-child(2) {
+      left: 45%;
+      animation-delay: 0.2s;
+    }
+    .typing-circle:nth-child(3) {
+      left: auto;
+      right: 15%;
+      animation-delay: 0.3s;
+    }
+    .typing-shadow {
+      width: 5px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 30px;
+      transform-origin: 50%;
+      z-index: 3;
+      left: 15%;
+      filter: blur(1px);
+      animation: typing-shadow046 0.5s alternate infinite ease;
+    }
+    @keyframes typing-shadow046 {
+      0% { transform: scaleX(1.5); }
+      40% { transform: scaleX(1); opacity: 0.7; }
+      100% { transform: scaleX(0.2); opacity: 0.4; }
+    }
+    .typing-shadow:nth-child(4) {
+      left: 45%;
+      animation-delay: 0.2s;
+    }
+    .typing-shadow:nth-child(5) {
+      left: auto;
+      right: 15%;
+      animation-delay: 0.3s;
+    }
+
+    /* ----------------------- Fade-in Animation ----------------------- */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ----------------------- Navbar ----------------------- */
+
+	/* === HERO BOX SECTION === */
+	.hero-box {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  padding: 180px 20px;
+	}
+
+
+	/* === Left Side Text === */
+	.hero-text {
+	  flex: 1;
+	  z-index: 2;
+	  padding-right: 40px;
+	}
+
+	.hero-title {
+	  font-size: 5rem;            /* Larger main title */
+	  font-weight: 900;
+	  margin-bottom: 10px;
+	  color: #f5f5f5;
+	  line-height: 1.1;
+	}
+
+	.hero-subtitle {
+	  font-size: 1.8rem;          /* Larger subtitle */
+	  font-weight: 500;
+	  margin-bottom: 35px;
+	  color: #dcdcdc;
+	}
+
+	.hero-quote {
+	  font-size: 1.3rem;
+	  font-style: italic;
+	  color: #bfbfbf;
+	  margin-bottom: 35px;
+	  max-width: 450px;
+	}
+
+	/* Buttons and icons container */
+	.hero-buttons {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 15px;
+	  margin-bottom: 30px;
+	}
+
+	.hero-btn {
+	  background: #1f181e;
+	  color: #ffffff;
+	  padding: 14px 34px;
+	  border-radius: 50px;
+	  font-weight: 600;
+	  font-size: 1.1rem;
+	  text-decoration: none;
+	  border: 2px solid #ffd11a;
+	  transition: all 0.3s ease;
+	}
+
+	.hero-btn:hover {
+	  background: #ffd11a;
+	  color: #1f181e;
+	  transform: translateY(-3px);
+	}
+
+	/* === Social icons in Hero === */
+	.hero-socials {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 28px;
+	  margin-top: 15px;
+	}
+
+	.hero-socials a {
+	  font-size: 3rem;         /* Bigger icons */
+	  color: #ffd11a;
+	  transition: transform 0.3s ease, color 0.3s ease;
+	}
+
+	.hero-socials a:hover {
+	  transform: translateY(-4px) scale(1.1);
+	  
+	}
+
+	/* Same color hover styles as contact */
+	.hero-socials a[aria-label="Discord"]:hover { color: #5865F2; }
+	.hero-socials a[aria-label="X (Twitter)"]:hover { color: #000000; }
+	.hero-socials a[aria-label="LinkedIn"]:hover { color: #0077B5; }
+	.hero-socials a[aria-label="Instagram"]:hover { color: #E1306C; }
+	.hero-socials a[aria-label="YouTube"]:hover { color: #FF0000; }
+	.hero-socials a[aria-label="Twitch"]:hover { color: #9146FF; }
+
+	/* === HERO CONTAINER (update this small part) === */
+	.hero-container {
+	  position: relative;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  background-color: #1f181e;
+	  padding: 100px 80px;
+	  max-width: 1200px;
+	  width: 100%;
+	  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+	  overflow: visible; /* keep this visible so image can extend */
+	}
+
+	/* === RIGHT SIDE IMAGE — refined cutout style === */
+	.hero-image {
+	  flex: 1;
+	  position: relative;
+	  display: flex;
+	  justify-content: flex-end;
+	  align-items: center; /* keeps vertical balance */
+	  overflow: visible;
+	  pointer-events: none; /* prevent unwanted hover region expanding */
+	}
+
+	.hero-image img {
+	  width: 600px;
+	  height: auto;
+	  position: absolute; /* let image float outside container */
+	  right: -110px;      /* move out to the right side */
+	  bottom: -305px;      /* slightly below container bottom */
+	  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
+	  transition: transform 0.4s ease;
+	}
+
+
+	/* Floating shadow */
+	.hero-container::after {
+	  content: "";
+	  position: absolute;
+	  bottom: -20px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  width: 90%;
+	  height: 40px;
+	  background: radial-gradient(
+		ellipse at center,
+		rgba(0, 0, 0, 0.1) 0%,
+		transparent 70%
+	  );
+	  z-index: 0;
+	  border-radius: 50%;
+	}
+
+	/* Responsive */
+	@media (max-width: 900px) {
+	  .hero-container {
+		flex-direction: column;
+		text-align: center;
+		padding: 60px 30px;
+	  }
+
+	  .hero-title { font-size: 3.4rem; }
+	  .hero-subtitle { font-size: 1.4rem; }
+	  .hero-quote { font-size: 1.1rem; margin: 20px auto; }
+
+	  .hero-image img {
+		margin: 0;
+		width: 280px;
+	  }
+	}
+
+.teams-wrapper::before,
+.teams-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.teams-wrapper::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #1f181e 0%,
+    rgba(31, 24, 30, 0) 100%
+  );
+}
+
+.teams-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #1f181e 0%,
+    rgba(31, 24, 30, 0) 100%
+  );
+}
+
+
+    /* ----------------------- Games ----------------------- */
+    .game-card {
+      position: relative;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      color: #fff;
+      text-align: center;
+      height: 220px;
+    }
+    .game-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+	  background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+
+    }
+    .game-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 2;
+    }
+    .game-card h5 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -60px;
+      opacity: 0;
+      z-index: 3;
+      font-size: 2rem;
+      font-weight: bold;
+      transition: all 0.4s ease;
+    }
+    .game-card:hover {
+      transform: translateY(-5px);
+    }
+    .game-card:hover h5 {
+      bottom: 50%;
+      transform: translate(-50%, 70%);
+      opacity: 1;
+    }
+    /* ----------------------- Organizations ----------------------- */
+	.org-logo img {
+	  max-height: 85px;
+	  filter: grayscale(100%);
+	  opacity: 0.8;
+	  transition: all 0.25s ease;
+	}
+
+	.org-logo img:hover {
+	  filter: none;
+	  opacity: 1;
+	  transform: scale(1.06);
+	}
+
+	.orgs-disclaimer {
+	  margin-top: 30px;
+	  font-size: 0.75rem;
+	  opacity: 0.6;
+	  max-width: 650px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+    /* ----------------------- Carousel ----------------------- */
+    #infoCarousel { overflow: hidden; border-radius: 10px; perspective: 1000px; }
+    #infoCarousel .carousel-item { position: relative; overflow: hidden; }
+    #infoCarousel img {
+      object-fit: cover;
+      height: 400px;
+      border-radius: 8px;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                  box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                  filter 0.4s ease;
+    }
+    #infoCarousel .carousel-caption {
+      background: rgba(0,0,0,0.55);
+      padding: 15px 20px;
+      border-radius: 8px;
+      transition: all 0.4s ease;
+      opacity: 0.85;
+      transform: translateY(20px);
+    }
+    #infoCarousel .carousel-item:hover img {
+      transform: scale(1.08) rotateX(5deg) rotateY(-3deg);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25), 0 0 30px rgba(129,103,169,0.35);
+      filter: brightness(1.05);
+    }
+    #infoCarousel .carousel-item:hover .carousel-caption {
+      opacity: 1;
+      transform: translateY(0);
+      background: #ffd11a;
+	  color: #000000;
+      box-shadow: #ffd11a;
+    }
+	
+
+    /* ----------------------- Teams ----------------------- */
+		.logo-track {
+	  position: relative;
+	  z-index: 1;
+	}
+	.teams-wrapper {
+	  background: #1f181e;
+	  border-radius: 24px;
+	  padding: 35px 20px; /* ⬅ increased vertical padding */
+	  box-shadow:
+		0 20px 50px rgba(0, 0, 0, 0.35),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+	  position: relative;
+	  overflow: hidden;
+	}
+
+	.logo-track img.small {
+		height: 120px;      /* smaller than default 80px */
+		min-width: 120px;  /* optional, keeps spacing proportional */
+		transform: scale(0.85); /* optional, slightly smaller visual scale */
+		transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+	}
+
+	.logo-track img.small:hover {
+		transform: scale(1); /* hover pop, smaller than normal logos */
+		filter: grayscale(0%);
+		opacity: 1;
+	}
+
+	.logo-carousel {
+	  overflow: hidden;
+	  width: 100%;
+	  position: relative;
+	}
+
+	.logo-track {
+	  display: flex;
+	  align-items: center;
+	  gap: 3rem;
+	  width: max-content;
+	  will-change: transform;
+	}
+
+	.logo-track img {
+	  height: 140px;
+	  min-width: 160px;
+	  object-fit: contain;
+	  filter: grayscale(100%);
+	  opacity: 0.85;
+	  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+	}
+
+	.logo-track img:hover {
+	  filter: grayscale(0%);
+	  opacity: 1;
+	  transform: scale(1.08);
+	}
+	
+	.teams-section {
+	  max-width: 1700px;   /* wider, but not full-screen */
+	}
+		.logo-track img.featured {
+		transform: scale(0.85);
+	  height: 160px;      /* bigger than the default 80px */
+	  min-width: 150px;   /* optional, ensures spacing */
+	  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+	}
+
+	.logo-track img.featured:hover {
+	  transform: scale(1); /* a little extra pop on hover */
+	}
+
+
+    /* ----------------------- Experience Reel ----------------------- */
+    .experience-section h2 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+    .ratio.shadow-lg {
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ratio.shadow-lg:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+	/* Caster Portfolio Button */
+	.caster-btn {
+	  background-color: white;
+	  color: black;
+	  border-radius: 10em;
+	  font-family: 'Arial', sans-serif;
+	  font-size: 15px;
+	  font-weight: 100;
+	  padding: 1em 2em;
+	  cursor: pointer;
+	  transition: all 0.3s ease-in-out;
+	  border: 1px solid black;
+	  box-shadow: 0 0 0 0 black;
+	  display: inline-flex;
+	  align-items: center;
+	  gap: 10px; /* space between icon and text */
+	  text-decoration: none; /* remove underline if using <a> */
+	}
+
+	.caster-btn:hover {
+	  transform: translateY(-4px) translateX(-2px);
+	  background: #ffd11a;
+	  box-shadow: 2px 5px 0 0 black;
+	}
+
+	.caster-btn:active {
+	  transform: translateY(2px) translateX(1px);
+	  box-shadow: 0 0 0 0 black;
+	}
+
+
+    /* ----------------------- Contact ----------------------- */
+    #contact { padding: 90px 0; }
+    .contact-info {
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .contact-info:hover { transform: translateY(-5px); }
+    .contact-info h4 { font-weight: 700; margin-bottom: 1rem; color: #1F181E; }
+    .contact-info p, .contact-info a { color: #555; margin-bottom: 1rem; text-decoration: none; }
+
+
+
+	/* ======================== Footer Contact Styles ======================== */
+	.footer-contact {
+	  background: #1f181e;
+	  color: #ffff;
+	  padding: 80px 20px;
+	  text-align: center;
+	  position: relative;
+	  overflow: hidden;
+	}
+
+
+	.footer-contact h2 {
+	  font-size: 2rem;
+	  margin-bottom: 15px;
+	  font-weight: 700;
+	}
+
+	.footer-contact p {
+	  font-size: 1.1rem;
+	  margin-bottom: 0.5rem;
+	}
+
+	.footer-contact a {
+	  color: #f3c623; /* Highlight color for links */
+	  text-decoration: none;
+	  transition: color 0.3s ease;
+	}
+
+	.footer-contact a:hover {
+	  color: #ffd966;
+	}
+
+
+    /* ----------------------- Responsiveness ----------------------- */
+	section { padding: 100px 0; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1rem; }
+      .experience-section h2 { font-size: 1.8rem; }
+    }
+	
+
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.gallery img {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.teams-disclaimer {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.featured-cast-card {
+  background: #1f181e;
+  border-radius: 18px;
+  padding: 30px 25px;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-cast-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+.featured-cast-card img {
+  max-height: 80px;
+  margin-bottom: 20px;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.featured-cast-card:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+.featured-cast-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.featured-cast-card p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-bottom: 12px;
+}
+
+.cast-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #ffd11a;
+  color: #1f181e;
+}
